@@ -1,7 +1,6 @@
 #lang slideshow
 
 (define on 1)
-(define off 0)
 (define height 20)
 (define width 20)
 
