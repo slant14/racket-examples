@@ -1,21 +1,5 @@
 #lang slideshow
 
-
-(define (render-bit bit)
-  (if (= bit 1)
-      (filled-rectangle 20 20)  
-      (rectangle 20 20)))      
-
-
-  (hc-append
-    (render-bit 0)
-    (render-bit 1)
-    (render-bit 0)
-    (render-bit 1))
-
-
-#lang slideshow
-
 (define on 1)
 (define off 0)
 (define height 20)
