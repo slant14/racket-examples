@@ -1,14 +1,14 @@
 #lang racket
 
-(define (count-leading-zeros lst ans)
+(define (count-trailing-zeros lst ans)
   (cond
     [(empty? lst) ans]  
-    [(= (first lst) 0) (count-leading-zeros (rest lst) (+ ans 1))]  
+    [(= (first lst) 0) (count-trailing-zeros (rest lst) (+ ans 1))]  
     [else ans]))  
      
 
 (define (trailing-zeros lst)
-  (count-leading-zeros (reverse lst) 0))  
+  (count-trailing-zeros (reverse lst) 0))  
 
 
 (trailing-zeros '(0 0 1 0 1 0 0 0))  
