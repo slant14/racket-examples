@@ -1,0 +1,12 @@
+#lang racket
+
+(define (len-via-map lst)
+  (apply + (map (lambda (x) 1) lst)))
+
+(define (len-via-foldl lst)
+  (foldl (lambda (lst count) (+ 1 count)) 0 lst))
+
+(len-via-map '(1 2 3 4 5))
+(len-via-foldl '(1 2 3 4 5))
+(len-via-map '())
+(len-via-foldl '())
