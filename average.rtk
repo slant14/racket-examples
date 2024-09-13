@@ -1,0 +1,9 @@
+#lang racket
+
+(define (average lst)
+  (if (null? lst)
+      (error "The list is empty")
+      (/ (apply + lst) (length lst))))
+
+
+(average '(1 2 3 4 5))
