@@ -1,0 +1,28 @@
+#lang racket
+
+
+(define (my-map-reverse f lst)
+  (foldl (lambda (x acc)
+           (cons (f x) acc))  
+         '()  
+         lst))
+
+(define (my-map f lst)
+  (my-reverse(foldl (lambda (x acc)
+           (cons (f x) acc))  
+         '()  
+         lst)))
+
+
+
+(define (my-reverse lst)
+  (foldl (lambda (x acc)
+           (cons x acc))  
+         '()  
+         lst))
+
+
+
+(my-map-reverse (lambda (x) (* x 2)) '(1 2 3 4))  
+(my-map (lambda (x) (* x 2)) '(1 2 3 4))  
+(my-reverse '(1 2 3 4 5))  
