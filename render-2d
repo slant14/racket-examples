@@ -1,0 +1,20 @@
+#lang racket
+(require 2htdp/image)
+
+(define (render-2D x-start x-end y-start y-end func)
+  (define (append-horizontally row)
+    (apply beside row)) 
+  
+  (define (create-row y-start y-end x)
+    (map (lambda (y) (func x y))
+         (build-list (+ (- y-end y-start) 1) (lambda (j) (+ y-start j)))))
+  
+         (map (lambda (x) (append-horizontally (create-row y-start y-end x)))
+              (build-list (+ (- x-end x-start) 1) (lambda (i) (+ x-start i))))))
+
+
+(define (example-pic-func x y)
+  (rectangle 10 10 "solid" (make-color (* 50 x) (* 50 y) 200)))
+
+
+(render-2D 0 4 0 3 example-pic-func)
