@@ -1,5 +1,8 @@
 #lang racket
 
+(define (for-range start end f)
+  (map f (range start end)))
+
 (define (generate-combinations n start end)
   (if (= n 0)
       '(())
