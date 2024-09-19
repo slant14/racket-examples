@@ -1,5 +1,8 @@
 #lang racket
 
+(define (for-range start end f)
+  (map f (range start end)))
+
 (define (attacks-any? q qs)
   (ormap (lambda (other-q) (attacks? q other-q)) qs))
 
