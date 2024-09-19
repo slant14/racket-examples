@@ -27,10 +27,6 @@
   (ormap (lambda (other-q) (attacks? q other-q)) qs))
 
 
-(define (no-attacks? qs)
-  (not (ormap (lambda (q)
-                (attacks-any? q (cdr (member q qs))))
-              qs)))
 
 
 (define q1 '(1 1))
